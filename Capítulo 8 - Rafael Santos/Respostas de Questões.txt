@@ -1,0 +1,136 @@
+************************************************************************* Solução Exercícios Capítulo 8 *******************************************************************************************
+Questão 8.1:
+
+A classe Ponto3D herda de Ponto2D, mas seu construtor tenta acessar diretamente os campos privados da classe Ponto2D, o que não é permitido. O correto seria o construtor da classe Ponto3D inicia-
+alizar seus campos herdados através do comando super. 
+
+Questão 2:
+
+Porque a classe Funcionario herda de Pessoa e ambas as classes possuem o método toString. O método toString da classe Funcionario precisa utilizar a palavra-chave super para fazer referência ao 
+método toString da classe ancestral (Pessoa), se não o fizesse o método chamaria ele mesmo, o que não seria o desejado.
+
+Questão 8.3: 
+
+Não existe herança múltipla em JAVA, portanto as seguintes linhas estão incorretas no código:
+
+linha 1: tentativa de herança múltipla.
+linha 2: dois comandos super, um seguido do outro, o segundo daria erro ao ser chamado, pois faz referência a outra classe e vem depois de um outro comando.
+linha 3: dois métodos toString para duas classes ancentrais, só é permitido uma classe ancestral em java.
+
+Questão 8.4:
+
+Linha 15: a palavra-chave super com argumentos de inicialização só pode ser usada em construtores.
+
+Questão 8.5:
+
+Linha 7: a palavra-chave super deve ser usada sempre como primeiro comando, dentro do construtor.
+
+Questão 8.6:
+
+* Linha 3: O campo data não é inicializado pelo construtor;
+* Linha 7: A classe não herda de nenhuma outra classe, mas utilizou-se a palavra-chave super, o que não faz sentido;
+* Linha 12: Tenta chamar o método toString da classe Data, como se essa fosse sua classe ancestral, mas a classe DataHora não herda de Data.
+
+Questão 8.7:
+
+* Linha 1: Tentativa de herança múltipla;
+* Linha 5: O comando não faz sentido, seria preciso que criar uma referência e fazer está apontar para um objeto da classe Data;
+* Linha 6: O comando não faz sentido, seria preciso que criar uma referência e fazer está apontar para um objeto da classe Hora;
+* Linha 10: Os métodos toString das classes Data e Hora não são estáticos, logo não podem ser chamados dessa maneira.
+
+Questão 8.8:
+
+Uma classe final não pode ser derivada, logo a classe final Ponto2D não pode ser superclasse da classe final Ponto3D.
+
+Questão 8.9:
+
+Os campos herdados da classe (nome, identidade e dada de nascimento) não seriam inicializados e teriam valores default.
+
+Questão 8.10:
+
+Campos da classe ChegeDeDepartamento:
+
+private String nome           -> Não pode ser modificado diretamente
+private int    identidade     -> Não pode ser modificado diretamente
+private Data   nascimento     -> Não pode ser modificado diretamente
+private Data   admissão       -> Não pode ser modificado diretamente
+private float  salário        -> Não pode ser modificado diretamente
+private String departamento   -> Pode ser modificado diretamente
+private Data   promoçãoAChefe -> Pode ser modificado diretamente
+
+Questão 8.11: 
+
+Sim, seria possível. Como vantagem temos a possibilitade de uma mesma instância da classe poder chamar ambos os métodos, de forma simples e natural. Como desvantagem temos o fator de complexidade
+do código, pois esse terá mais comandos redundantes que podem levar a dúvidas de uso e encher a classe de métodos desnecessários.
+
+Questão 8.12:
+
+Porque construtores são métodos especiais que estão relacionados à palavra-chave new. Ou seja, eles só podem ser chamados quando um instância de uma classe estiver sendo criada, por isso não
+podem ser herdados.
+
+Questão 8.13:
+
+As classes que herdam dessa classe não poderiam sobrescrer esse método, ele seria imutável.
+
+Questão 8.15:
+
+O comando super vem depois de um outro comando, dentro do escopo do construtor, isso não pode ocorrer. O comando super deve ser o primeiro a ser chamado dentro do construtor.
+
+Questão 8.21:
+
+Erros:
+
+Linha 33: não faz sentido a palavra chave super tentar acessar outro método super com o operador ".", pois super refere-se a um construtor imediato da superclasse, não é um objeto  de uma classe com seus
+próprios campos/métodos, ao executar esse comando ocorrerá erro na compilação da classe.
+
+Linha 34: o comando super deve ser o primeiro a ser chamado, dentro do escopo do construtor.
+
+Linha 39: mesmo erro descrito na linha 33 (ver resposta acima).
+
+Questão 8.24:
+
+Os campos herdados, da classe Ponto3D, não são inicializados, mesmo sendo passados como argumentos ao construtor da classe.
+
+Questão 8.25:
+
+As funções das classes são as mesmas, a única diferença será a estrutura mesmo.
+
+Questão 8.26:
+
+Foi necessário sobreescrever apenas o métoto toString(), na classe Lampada100Estados foi necessário a criação de métodos estáticos privados, pois estes serviram como sub-rotinas para o construtor dessa classe.
+
+Questão 8.27:
+
+Não e não.
+
+Questão 8.28:
+
+A segunda instrução de seleção nunca acontecerá, porque a classe ChefeDeDepartamento herda da classe Funcionario e, ao passar pelo primeiro if, a instrução em seu escopo será executada.
+
+Questão 8.30:
+
+O programa funcionará normalmente, pois a classe ChefeDeDepartamento herda da classe Funcionario e, devido a isso, ela possui o método qualSalário.
+
+Questão 8.31:
+
+O programa funcionará normalmente, pois todas as classes herdam de Object, ou seja, está classe é a mais genérica possível.
+
+Questão 8.32:
+
+Embora seja possível fazer cast para Object, é preciso tomar cuidado com cast's indiretos. Pois Eles estão relacionados a herança entre as classes e, quando não há herança ocorrerá erro. Neste exemplo
+não é possível fazer um cast da classe AutomovelDeLuxo para String, pois não existe nenhum mecanismo de herança as conectando.
+
+Questão 8.37
+
+As diferenças estão no objetivo de cada uma, enquanto uma é voltada para venda a outra é voltada para biblioteca.
+Isto faz com ela possuam campos especializados, as tornando diferentes uma da outra. Elas possuem em
+comum os campos herdados de sua superclasse (classe Livro).
+
+Questão 8.41
+
+O único método que deve ser sobreposto é o toString, mais devido ao título mesmo. Já os outros métodos das classe ancestral serão mantidos e utilizados
+pela classe herdeira.
+
+Questão 8.43
+
+Dará erro de compilação, pois os campos da classe Pessoa são privados desta classe, não sendo possível modificálos diretamente.
