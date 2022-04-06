@@ -11,7 +11,7 @@ método toString da classe ancestral (Pessoa), se não o fizesse o método chama
 
 Questão 8.3: 
 
-Não existe herança múltipla em JAVA, portanto as seguintes linhas estão incorretas no código:
+Não existe herança múltipla em JAVA (a menos que a classe implemente uma ou mais interfaces), portanto as seguintes linhas estão incorretas no código:
 
 linha 1: tentativa de herança múltipla.
 linha 2: dois comandos super, um seguido do outro, o segundo daria erro ao ser chamado, pois faz referência a outra classe e vem depois de um outro comando.
